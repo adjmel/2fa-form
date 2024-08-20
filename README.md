@@ -36,3 +36,10 @@ The project uses Docker to facilitate deployment. Here’s how to start the appl
 ```bash
 docker compose up --build
 ```
+
+![Capture d’écran 2024-08-20 à 19 34 24](https://github.com/user-attachments/assets/843694f4-913d-4931-a16f-d6c9e7638f98)
+![Capture d’écran 2024-08-20 à 19 34 33](https://github.com/user-attachments/assets/75c162e6-038a-4544-8ac5-80661eb57163)
+![Capture d’écran 2024-08-20 à 19 35 16](https://github.com/user-attachments/assets/0529a4fa-bf3d-4f4e-9eb9-5e60d272a4cd)
+![Capture d’écran 2024-08-20 à 19 36 12](https://github.com/user-attachments/assets/ba0b6ee1-dc55-4cb1-89d1-64aa1e8bee28)
+![Capture d’écran 2024-08-20 à 19 35 33](https://github.com/user-attachments/assets/a13c6640-fed6-4bdb-aaed-bd9525daa400)
+
