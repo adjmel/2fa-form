@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+
+  2fa:
+    container_name: 2fa
+    build: 2fa
+    volumes:
+      - ./2fa/2fa:/2fa
+    networks:
+      - transcendence
+    ports:
+      - "8003:8003"
+    restart: on-failure
+
+networks:
+  transcendence:

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'verify_2fa.css' %}">
+    <title>Vérification 2FA</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-custom">
+      <div class="image-container text-center">
+        <img src="{% static 'cadenas-ferme.png' %}" style="width: 50px; height: auto;">
+      </div>  
+      <p class="text-center">Enter the Google Authenticator app verification code</p>
+      <form method="post" id="verify-form">
+        {% csrf_token %}
+        <div class="col mx-2 row justify-content-center mt-4 pt-2">
+          <input type="text" id="verification_code" name="verification_code" required class="form-control form-control-lg py-2">
+        </div>
+        <div class="col mx-2 row justify-content-center mt-4 pt-2">
+          <button type="submit" class="btn btn-primary btn-block btn-max-width">Verify my account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+{% endblock %}
+

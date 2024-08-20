@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body 
+{
+    font-family: "Nunito", sans-serif;
+    color:rgb(241, 236, 236);
+    background-image: linear-gradient(45deg, #933b67, #856b87, #21486f, #7d6815, #018401);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite; /* Augmenter la durée pour une transition plus lente */
+}
+
+@keyframes gradientBG 
+{
+    0% {
+    background-position: 0% 50%;
+    }
+    50% {
+    background-position: 100% 50%;
+    }
+    100% {
+    background-position: 0% 50%;
+    }
+}
+
+
+html
+{
+    background-color:black;
+}
+/* Style pour le conteneur */
+.container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;     /* Centre verticalement */
+    height: 100vh;           /* Prend toute la hauteur de la vue */
+}
+
+/* Style pour le formulaire personnalisé */
+.form-custom {
+    width: 600px;
+    background: white;
+    border: 2px solid transparent;
+    padding: 32px 24px;
+    font-size: 14px;
+    font-family: inherit;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    /* background-size: 200% 100%; */
+    /* animation: gradient 5s ease infinite; */
+}
+  
+p
+{
+    font-size: 27px;
+}
+
+.p 
+{
+    text-align: center;
+}
+
+
+.btn-max-width 
+{
+    max-width: 70%;
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    transition: background-color 0.5s; /* Animation de transition pour la couleur de fond */
+}
+
+.btn-max-width:hover {
+    background-color:  #933b67; /* Couleur de fond au survol */
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+

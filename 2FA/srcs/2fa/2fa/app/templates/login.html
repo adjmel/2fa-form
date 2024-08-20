@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <title>Login</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-custom">
+      <div class="image-container text-center">
+        <img src="{% static 'cadenas-ferme.png' %}" style="width: 50px; height: auto;">
+      </div> 
+      <form method="post" id="login-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="button-container">
+        <button type="submit" class="btn btn-primary btn-block btn-max-width">Login</button>
+      </div>
+      </form>
+      <p>Don't have an account ? <a id="signup" href="{% url 'signup' %}">Sign up</a></p>
+    </div>
+  </div>
+</body>
+</html>
+{% endblock %}

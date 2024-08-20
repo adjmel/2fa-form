@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="success-container">
+    <div class="success-message">
+        <h1>Congratulations !</h1>
+        <p>Your action has been completed successfully.</p>
+    </div>
+    <div id="confetti"></div>
+</div>
+
+<style>
+
+    body {
+        background-color: purple;
+    }
+
+    .success-container {
+        text-align: center;
+        padding: 50px;
+        background-color: #f9f9f9;
+        position: relative;
+        height: 100vh;
+    }
+
+    .success-message h1 {
+        font-size: 3em;
+        color: #4CAF50;
+        margin-bottom: 20px;
+    }
+
+    .success-message p {
+        font-size: 1.5em;
+        color: #333;
+    }
+
+    #confetti {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    .confetti-piece {
+        position: absolute;
+        width: 10px;
+        height: 20px;
+        background-color: #FFC107;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        0% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(100vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+</style>
+
+<script>
+    function createConfetti() {
+        const confettiContainer = document.getElementById('confetti');
+        for (let i = 0; i < 100; i++) {
+            const confettiPiece = document.createElement('div');
+            confettiPiece.classList.add('confetti-piece');
+            confettiPiece.style.left = Math.random() * 100 + 'vw';
+            confettiPiece.style.animationDuration = Math.random() * 3 + 2 + 's';
+            confettiPiece.style.backgroundColor = getRandomColor();
+            confettiContainer.appendChild(confettiPiece);
+        }
+    }
+
+    function getRandomColor() {
+        const colors = ['#FF5733', '#FFC107', '#4CAF50', '#03A9F4', '#9C27B0'];
+        return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    createConfetti();
+</script>
+{% endblock %}

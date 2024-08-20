@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'enable_2fa.css' %}">
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-custom">
+    <p class="center-text">Scan the QR code with the Google authenticator app below to enable 2FA for your account</p>
+   
+    <div class="download-links text-center">
+      <a class="btn btn-success" href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" target="_blank">
+        Download for Android
+      </a>
+      <a class="btn btn-info" href="https://apps.apple.com/fr/app/google-authenticator/id388497605" target="_blank">
+        Download for iOS
+      </a>
+    </div>
+
+    <div class="image-container text-center">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ qr_code_url }}" alt="QR Code">
+    </div>
+    <form method="post" id="enable-form">
+    {% csrf_token %}
+    <div class="button-container">
+      <input type="text" id="verification_code" name="verification_code" style="font-size: 2rem; padding: 5px;">
+      <button type="submit" class="btn btn-primary btn-block btn-max-width">Enable 2FA</button>
+    </div>
+    </form>
+    </div>
+  </div>
+</body>
+</html>
+{% endblock %}
